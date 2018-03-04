@@ -3,18 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:isScrollContainer="false"
+    android:scrollbars="vertical">
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/iv_movie_poster"
-            android:layout_width="match_parent"
+            android:layout_width="135dp"
             android:layout_height="200dp"
+            android:adjustViewBounds="true"
             android:contentDescription="@string/movie_image_description"
-            app:layout_constraintBottom_toTopOf="@+id/tv_movie_date"
+            app:layout_constraintBottom_toTopOf="@+id/tv_movie_plot"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_title_background"
@@ -31,7 +36,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_movie_title" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_movie_title"
@@ -48,13 +53,13 @@
             android:id="@+id/tv_movie_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/info_size"
             android:layout_marginLeft="@dimen/default_margin"
             android:layout_marginStart="@dimen/default_margin"
+            android:textSize="@dimen/info_size"
             app:layout_constraintBottom_toTopOf="@id/tv_movie_average"
-            app:layout_constraintLeft_toLeftOf="@id/iv_movie_poster"
-            app:layout_constraintStart_toStartOf="@id/iv_movie_poster"
-            app:layout_constraintTop_toBottomOf="@+id/iv_movie_poster"
+            app:layout_constraintLeft_toRightOf="@id/iv_movie_poster"
+            app:layout_constraintStart_toEndOf="@id/iv_movie_poster"
+            app:layout_constraintTop_toBottomOf="@+id/iv_title_background"
             tools:text="@string/dummy_date" />
 
         <TextView
@@ -72,11 +77,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_margin"
+            android:isIndicator="true"
             android:max="@integer/max_movie_score"
-            android:progress="@integer/increment_value"
+            android:numStars="5"
+            android:stepSize="0.1"
             app:layout_constraintBottom_toTopOf="@id/tv_movie_plot"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/iv_movie_poster"
+            app:layout_constraintStart_toEndOf="@id/iv_movie_poster"
             app:layout_constraintTop_toBottomOf="@+id/tv_movie_average" />
 
         <TextView
@@ -84,13 +91,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rb_movie_average"
+            app:layout_constraintTop_toBottomOf="@+id/iv_movie_poster"
             tools:text="@string/dummy_text" />
 
-     </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
 
 </ScrollView>

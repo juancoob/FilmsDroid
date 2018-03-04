@@ -83,7 +83,6 @@ public class MovieDetailFragment extends Fragment {
         moviePlotTextView.setText(mMovie.getOverview());
         movieAverageTextView.setText(mMovie.getVoteAverage());
         movieAverageRattingBar.setRating(Float.parseFloat(mMovie.getVoteAverage()));
-        movieAverageRattingBar.setEnabled(false);
 
         Picasso.with(getContext()).load(ActivityUtils
                 .getImageUri(mMovie.getImagePath(), getContext()))

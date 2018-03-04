@@ -1,4 +1,4 @@
-package com.juancoob.nanodegree.and.popularmovies.MovieDetail;
+package com.juancoob.nanodegree.and.filmsdroid.MovieDetail;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,14 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.juancoob.nanodegree.and.popularmovies.R;
-import com.juancoob.nanodegree.and.popularmovies.activity.MovieActivity;
-import com.juancoob.nanodegree.and.popularmovies.model.Movie;
-import com.juancoob.nanodegree.and.popularmovies.util.ActivityUtils;
+import com.juancoob.nanodegree.and.filmsdroid.R;
+import com.juancoob.nanodegree.and.filmsdroid.activity.MovieActivity;
+import com.juancoob.nanodegree.and.filmsdroid.model.Movie;
+import com.juancoob.nanodegree.and.filmsdroid.util.ActivityUtils;
 import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;

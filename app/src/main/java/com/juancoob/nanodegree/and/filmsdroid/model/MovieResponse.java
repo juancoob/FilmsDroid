@@ -1,4 +1,4 @@
-package com.juancoob.nanodegree.and.popularmovies.model;
+package com.juancoob.nanodegree.and.filmsdroid.model;
 
 import com.google.gson.annotations.SerializedName;
 

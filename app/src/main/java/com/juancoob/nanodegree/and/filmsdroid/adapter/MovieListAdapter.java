@@ -1,4 +1,4 @@
-package com.juancoob.nanodegree.and.popularmovies.adapter;
+package com.juancoob.nanodegree.and.filmsdroid.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,10 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.juancoob.nanodegree.and.popularmovies.MovieList.MovieListFragment;
-import com.juancoob.nanodegree.and.popularmovies.R;
-import com.juancoob.nanodegree.and.popularmovies.model.Movie;
-import com.juancoob.nanodegree.and.popularmovies.util.ActivityUtils;
+import com.juancoob.nanodegree.and.filmsdroid.MovieList.MovieListFragment;
+import com.juancoob.nanodegree.and.filmsdroid.R;
+import com.juancoob.nanodegree.and.filmsdroid.model.Movie;
+import com.juancoob.nanodegree.and.filmsdroid.util.ActivityUtils;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

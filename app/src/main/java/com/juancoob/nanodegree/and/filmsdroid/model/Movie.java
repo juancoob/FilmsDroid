@@ -1,4 +1,4 @@
-package com.juancoob.nanodegree.and.popularmovies.model;
+package com.juancoob.nanodegree.and.filmsdroid.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

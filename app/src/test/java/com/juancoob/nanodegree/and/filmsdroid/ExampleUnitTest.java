@@ -1,4 +1,4 @@
-package com.juancoob.nanodegree.and.popularmovies;
+package com.juancoob.nanodegree.and.filmsdroid;
 
 import org.junit.Test;
 

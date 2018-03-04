@@ -1,4 +1,4 @@
-package com.juancoob.nanodegree.and.popularmovies.activity;
+package com.juancoob.nanodegree.and.filmsdroid.activity;
 
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -6,15 +6,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.juancoob.nanodegree.and.popularmovies.MovieDetail.MovieDetailFragment;
-import com.juancoob.nanodegree.and.popularmovies.MovieDetail.MovieDetailPresenter;
-import com.juancoob.nanodegree.and.popularmovies.MovieList.IMovieListContract;
-import com.juancoob.nanodegree.and.popularmovies.MovieList.MovieListFragment;
-import com.juancoob.nanodegree.and.popularmovies.MovieList.MovieListPresenter;
-import com.juancoob.nanodegree.and.popularmovies.R;
-import com.juancoob.nanodegree.and.popularmovies.model.Movie;
-import com.juancoob.nanodegree.and.popularmovies.util.ActivityUtils;
-import com.juancoob.nanodegree.and.popularmovies.util.Constants;
+import com.juancoob.nanodegree.and.filmsdroid.MovieDetail.MovieDetailFragment;
+import com.juancoob.nanodegree.and.filmsdroid.MovieList.IMovieListContract;
+import com.juancoob.nanodegree.and.filmsdroid.MovieList.MovieListFragment;
+import com.juancoob.nanodegree.and.filmsdroid.MovieList.MovieListPresenter;
+import com.juancoob.nanodegree.and.filmsdroid.R;
+import com.juancoob.nanodegree.and.filmsdroid.model.Movie;
+import com.juancoob.nanodegree.and.filmsdroid.util.ActivityUtils;
+import com.juancoob.nanodegree.and.filmsdroid.util.Constants;
 
 public class MovieActivity extends AppCompatActivity implements IMovieListContract {
 

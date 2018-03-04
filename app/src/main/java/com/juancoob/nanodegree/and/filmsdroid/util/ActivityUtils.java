@@ -1,4 +1,4 @@
-package com.juancoob.nanodegree.and.popularmovies.util;
+package com.juancoob.nanodegree.and.filmsdroid.util;
 
 
 import android.content.Context;
@@ -7,7 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
-import com.juancoob.nanodegree.and.popularmovies.R;
+import com.juancoob.nanodegree.and.filmsdroid.R;
 
 /**
  * Created by Juan Antonio Cobos Obrero on 19/02/18.

@@ -1,17 +1,16 @@
-package com.juancoob.nanodegree.and.popularmovies.MovieList;
+package com.juancoob.nanodegree.and.filmsdroid.MovieList;
 
 
 import android.support.annotation.NonNull;
 
-import com.juancoob.nanodegree.and.popularmovies.BuildConfig;
-import com.juancoob.nanodegree.and.popularmovies.R;
-import com.juancoob.nanodegree.and.popularmovies.REST.IMovieAPIService;
-import com.juancoob.nanodegree.and.popularmovies.model.Movie;
-import com.juancoob.nanodegree.and.popularmovies.model.MovieResponse;
-import com.juancoob.nanodegree.and.popularmovies.util.Constants;
+import com.juancoob.nanodegree.and.filmsdroid.BuildConfig;
+import com.juancoob.nanodegree.and.filmsdroid.R;
+import com.juancoob.nanodegree.and.filmsdroid.REST.IMovieAPIService;
+import com.juancoob.nanodegree.and.filmsdroid.model.Movie;
+import com.juancoob.nanodegree.and.filmsdroid.model.MovieResponse;
+import com.juancoob.nanodegree.and.filmsdroid.util.Constants;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;

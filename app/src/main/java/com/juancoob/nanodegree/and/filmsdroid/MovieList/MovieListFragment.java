@@ -1,4 +1,4 @@
-package com.juancoob.nanodegree.and.popularmovies.MovieList;
+package com.juancoob.nanodegree.and.filmsdroid.MovieList;
 
 
 import android.content.Context;
@@ -14,12 +14,12 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.juancoob.nanodegree.and.popularmovies.R;
-import com.juancoob.nanodegree.and.popularmovies.activity.MovieActivity;
-import com.juancoob.nanodegree.and.popularmovies.adapter.IMovieListAdapterContract;
-import com.juancoob.nanodegree.and.popularmovies.adapter.MovieListAdapter;
-import com.juancoob.nanodegree.and.popularmovies.model.Movie;
-import com.juancoob.nanodegree.and.popularmovies.util.Constants;
+import com.juancoob.nanodegree.and.filmsdroid.R;
+import com.juancoob.nanodegree.and.filmsdroid.activity.MovieActivity;
+import com.juancoob.nanodegree.and.filmsdroid.adapter.IMovieListAdapterContract;
+import com.juancoob.nanodegree.and.filmsdroid.adapter.MovieListAdapter;
+import com.juancoob.nanodegree.and.filmsdroid.model.Movie;
+import com.juancoob.nanodegree.and.filmsdroid.util.Constants;
 
 import java.util.ArrayList;
 

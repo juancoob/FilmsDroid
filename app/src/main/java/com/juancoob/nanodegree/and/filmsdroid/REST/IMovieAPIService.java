@@ -1,6 +1,6 @@
-package com.juancoob.nanodegree.and.popularmovies.REST;
+package com.juancoob.nanodegree.and.filmsdroid.REST;
 
-import com.juancoob.nanodegree.and.popularmovies.model.MovieResponse;
+import com.juancoob.nanodegree.and.filmsdroid.model.MovieResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

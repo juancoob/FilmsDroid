@@ -1,6 +1,6 @@
-package com.juancoob.nanodegree.and.popularmovies.MovieList;
+package com.juancoob.nanodegree.and.filmsdroid.MovieList;
 
-import com.juancoob.nanodegree.and.popularmovies.model.Movie;
+import com.juancoob.nanodegree.and.filmsdroid.model.Movie;
 
 import java.util.ArrayList;
 

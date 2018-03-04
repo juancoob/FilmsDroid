@@ -1,4 +1,4 @@
-package com.juancoob.nanodegree.and.popularmovies.MovieDetail;
+package com.juancoob.nanodegree.and.filmsdroid.MovieDetail;
 
 /**
  * Created by Juan Antonio Cobos Obrero on 20/02/18.

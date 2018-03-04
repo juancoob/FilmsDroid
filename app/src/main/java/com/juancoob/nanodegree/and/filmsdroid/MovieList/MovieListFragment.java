@@ -65,11 +65,12 @@ public class MovieListFragment extends Fragment implements IMovieListContract.Vi
     public void onStart() {
         super.onStart();
         if(getActivity() != null) {
+            // If MovieListPresenter is null, I rotated the phone and I need to restore the values
             if (mMovieListPresenter == null) {
                 ((MovieActivity) getActivity()).setMovieListPresenter(new MovieListPresenter(this));
-                mMovieListPresenter = ((MovieActivity) getActivity()).getMovieListPresenter();
-                setPresenter(mMovieListPresenter);
+                setPresenter(((MovieActivity) getActivity()).getMovieListPresenter());
             }
+            // If MovieListFragment is null, I rotated the phone and I need to restore the values
             if (((MovieActivity) getActivity()).getMovieListFragment() == null) {
                 ((MovieActivity) getActivity()).setMovieListFragment(this);
             }

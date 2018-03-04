@@ -27,28 +27,27 @@ public class MovieActivity extends AppCompatActivity implements IMovieListContra
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie);
 
-        if(getSupportFragmentManager().findFragmentById(R.id.contentFrame) == null
+        if (getSupportFragmentManager().findFragmentById(R.id.contentFrame) == null
                 || getSupportFragmentManager().findFragmentById(R.id.contentFrame) instanceof MovieListFragment) {
             mMovieListFragment = (MovieListFragment) getSupportFragmentManager().findFragmentById(R.id.contentFrame);
             if (mMovieListFragment == null) {
-                // Create the fragment
+                // Create the movie list fragment
                 mMovieListFragment = MovieListFragment.getInstance();
                 ActivityUtils.addFragmentToActivity(getSupportFragmentManager(), mMovieListFragment, R.id.contentFrame);
             }
 
-            // Create the presenter
+            // Create the movie list presenter
             mMovieListPresenter = new MovieListPresenter(mMovieListFragment);
             mMovieListFragment.setPresenter(mMovieListPresenter);
 
             // If it loaded movies, it'll retrieve them again, otherwise it'll load them
             if (savedInstanceState != null) {
                 mMovieListPresenter.setMovieList(savedInstanceState.<Movie>getParcelableArrayList(Constants.MOVIE_LIST));
-                mMovieListPresenter.setOptionSelected(Constants.MOVIE_OPTION);
+                mMovieListPresenter.setOptionSelected(savedInstanceState.getString(Constants.MOVIE_OPTION));
             }
-
-        } else if(getSupportFragmentManager().findFragmentById(R.id.contentFrame) instanceof MovieDetailFragment) {
+        } else if (getSupportFragmentManager().findFragmentById(R.id.contentFrame) instanceof MovieDetailFragment) {
             mMovieDetailFragment = (MovieDetailFragment) getSupportFragmentManager().findFragmentById(R.id.contentFrame);
-            if(mMovieDetailFragment == null) {
+            if (mMovieDetailFragment == null) {
                 mMovieDetailFragment = MovieDetailFragment.getInstance();
                 ActivityUtils.replaceFragmentToActivity(getSupportFragmentManager(), mMovieDetailFragment, R.id.contentFrame);
             }
@@ -60,19 +59,22 @@ public class MovieActivity extends AppCompatActivity implements IMovieListContra
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        if(mMovieListFragment != null && getSupportFragmentManager().findFragmentById(R.id.contentFrame) instanceof MovieListFragment) {
+        if (getSupportFragmentManager().findFragmentById(R.id.contentFrame) instanceof MovieListFragment) {
             showMenu();
+        } else if (getSupportFragmentManager().findFragmentById(R.id.contentFrame) instanceof MovieDetailFragment) {
+            hideMenu();
+            upFunctionalityEnabled(true);
         }
         return super.onPrepareOptionsMenu(menu);
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        if(mMovieListPresenter != null) {
+        if (mMovieListPresenter != null) {
             outState.putParcelableArrayList(Constants.MOVIE_LIST, mMovieListPresenter.getMovieList());
             outState.putString(Constants.MOVIE_OPTION, mMovieListPresenter.getOptionSelected());
         }
-        if(mMovieDetailFragment != null) {
+        if (mMovieDetailFragment != null) {
             outState.putParcelable(Constants.MOVIE, mMovieDetailFragment.getMovie());
         }
 
@@ -106,8 +108,6 @@ public class MovieActivity extends AppCompatActivity implements IMovieListContra
                 break;
             case android.R.id.home:
                 onBackPressed();
-                showMenu();
-                upFunctionalityEnabled(false);
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -134,7 +134,7 @@ public class MovieActivity extends AppCompatActivity implements IMovieListContra
     }
 
     public void showMenu() {
-        if(mMovieListPresenter.getOptionSelected().equals("popular")) {
+        if (mMovieListPresenter.getOptionSelected().equals("popular")) {
             mMenu.findItem(R.id.top_rated).setVisible(true);
             mMenu.findItem(R.id.popular_movies).setVisible(true);
             mMenu.findItem(R.id.top_rated_label).setVisible(false);
@@ -148,7 +148,7 @@ public class MovieActivity extends AppCompatActivity implements IMovieListContra
     }
 
     public void upFunctionalityEnabled(boolean isEnabled) {
-        if(getSupportActionBar() != null) {
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(isEnabled);
         }
     }
@@ -157,6 +157,7 @@ public class MovieActivity extends AppCompatActivity implements IMovieListContra
     public void onBackPressed() {
         super.onBackPressed();
         upFunctionalityEnabled(false);
+        showMenu();
     }
 
     public MovieListFragment getMovieListFragment() {

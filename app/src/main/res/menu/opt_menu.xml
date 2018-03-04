@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.MovieActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/popular_movies_label"
+        android:title="@string/sorted_popular"
+        app:showAsAction="ifRoom"
+        android:enabled="false"
+        android:visible="true" />
+
+    <item
+        android:id="@+id/top_rated_label"
+        android:title="@string/sorted_top"
+        app:showAsAction="ifRoom"
+        android:enabled="false"
+        android:visible="false" />
+
+    <item
+        android:id="@+id/popular_movies"
+        android:title="@string/sort_popular"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/top_rated"
+        android:title="@string/sort_top"
+        app:showAsAction="never" />
+</menu>

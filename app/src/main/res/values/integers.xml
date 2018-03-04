@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="movie_list_columns">2</integer>
+    <integer name="max_movie_score">10</integer>
+    <integer name="increment_value">1</integer>
+</resources>

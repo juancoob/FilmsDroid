@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">FilmsDroid</string>
+    <string name="sort_popular">Sort by popular movies</string>
+    <string name="sorted_popular">Popular movies</string>
+    <string name="sort_top">Sort by top rated movies</string>
+    <string name="sorted_top">Top rated movies</string>
+    <string name="movie_title_description">movie title</string>
+    <string name="movie_data_background">movie title and date background</string>
+    <string name="movie_image_description">movie image</string>
+    <string name="dummy_date">2018</string>
+    <string name="dummy_average">5/10</string>
+    <string name="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean posuere, velit sed dapibus blandit, est augue tincidunt erat, vel faucibus massa velit sed mi. Aenean a ex orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi egestas turpis et turpis egestas iaculis. Morbi pulvinar elit ac ipsum accumsan auctor. Donec auctor augue nec arcu tincidunt, sed dignissim ex sagittis. Curabitur libero dui, aliquam eget dictum scelerisque, vehicula et orci. Vestibulum non enim vitae felis semper commodo. </string>
+    <string name="call_error">Sorry, we had an error fetching movies!</string>
+    <string name="default_image_size">w185</string>
+</resources>

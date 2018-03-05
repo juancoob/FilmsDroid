@@ -26,9 +26,6 @@ import butterknife.ButterKnife;
 
 public class MovieDetailFragment extends Fragment {
 
-    @BindView(R.id.tv_movie_title)
-    public TextView movieTitleTextView;
-
     @BindView(R.id.tv_movie_date)
     public TextView movieDateTextView;
 
@@ -78,7 +75,9 @@ public class MovieDetailFragment extends Fragment {
     }
 
     private void populateUi() {
-        movieTitleTextView.setText(mMovie.getTitle());
+        if(getActivity() != null) {
+            getActivity().setTitle(mMovie.getTitle());
+        }
         movieDateTextView.setText(mMovie.getReleaseDate());
         moviePlotTextView.setText(mMovie.getOverview());
         movieAverageTextView.setText(mMovie.getVoteAverage());

@@ -1,6 +1,7 @@
 package com.juancoob.nanodegree.and.filmsdroid.adapter;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.juancoob.nanodegree.and.filmsdroid.MovieList.MovieListFragment;
+import com.juancoob.nanodegree.and.filmsdroid.MovieList.IMovieListContract;
 import com.juancoob.nanodegree.and.filmsdroid.R;
 import com.juancoob.nanodegree.and.filmsdroid.model.Movie;
 import com.juancoob.nanodegree.and.filmsdroid.util.ActivityUtils;
@@ -26,13 +27,13 @@ import butterknife.ButterKnife;
 public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MovieViewHolder> implements IMovieListAdapterContract {
 
     private ArrayList<Movie> mMovieList = new ArrayList<>();
-    private Context mCtx;
-    private MovieListFragment mMovieListFragment;
+    private final Context mCtx;
+    private final IMovieListContract mIMovieListContract;
 
-    public MovieListAdapter(Context context, ArrayList<Movie> movieList, MovieListFragment movieListFragment) {
+    public MovieListAdapter(Context context, ArrayList<Movie> movieList, IMovieListContract movieListContract) {
         mCtx = context;
         mMovieList = movieList;
-        mMovieListFragment = movieListFragment;
+        mIMovieListContract = movieListContract;
     }
 
     @Override
@@ -42,14 +43,15 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
         notifyDataSetChanged();
     }
 
+    @NonNull
     @Override
-    public MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View item = LayoutInflater.from(mCtx).inflate(R.layout.item_movie, parent, false);
         return new MovieViewHolder(item);
     }
 
     @Override
-    public void onBindViewHolder(final MovieViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MovieViewHolder holder, int position) {
         Movie movie = mMovieList.get(position);
         // Get year from release date
         String[] releaseDate = movie.getReleaseDate().split("-");
@@ -85,7 +87,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
 
         @Override
         public void onClick(View view) {
-            mMovieListFragment.onClickListener(mMovieList.get(getAdapterPosition()));
+            mIMovieListContract.onClickListener(mMovieList.get(getAdapterPosition()));
         }
     }
 }

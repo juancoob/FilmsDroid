@@ -10,13 +10,12 @@ import java.util.ArrayList;
 
 public interface IMovieListContract {
 
-    void OnFragmentInteraction(String id, Movie movie);
+    void onClickListener(Movie movie);
 
     interface View {
         void showMovieList(ArrayList<Movie> mMovieList);
         void showToast(int messageId);
         void hideProgressBar();
-        void onClickListener(Movie movie);
     }
 
     interface Presenter {

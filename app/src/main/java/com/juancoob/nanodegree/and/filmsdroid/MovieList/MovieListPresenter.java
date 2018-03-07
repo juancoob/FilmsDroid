@@ -24,7 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MovieListPresenter implements IMovieListContract.Presenter {
 
-    private IMovieListContract.View mMovieListFragment;
+    private final IMovieListContract.View mMovieListFragment;
     private ArrayList<Movie> mMovieList = new ArrayList<>();
 
     private String optionSelected = "popular";

@@ -15,11 +15,9 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.juancoob.nanodegree.and.filmsdroid.R;
-import com.juancoob.nanodegree.and.filmsdroid.activity.MovieActivity;
 import com.juancoob.nanodegree.and.filmsdroid.adapter.IMovieListAdapterContract;
 import com.juancoob.nanodegree.and.filmsdroid.adapter.MovieListAdapter;
 import com.juancoob.nanodegree.and.filmsdroid.model.Movie;
-import com.juancoob.nanodegree.and.filmsdroid.util.Constants;
 
 import java.util.ArrayList;
 
@@ -67,17 +65,6 @@ public class MovieListFragment extends Fragment implements IMovieListContract.Vi
         if(getActivity() != null) {
             getActivity().setTitle(getResources().getString(R.string.app_name));
         }
-        if(getActivity() != null) {
-            // If MovieListPresenter is null, I rotated the phone and I need to restore the values
-            if (mMovieListPresenter == null) {
-                ((MovieActivity) getActivity()).setMovieListPresenter(new MovieListPresenter(this));
-                setPresenter(((MovieActivity) getActivity()).getMovieListPresenter());
-            }
-            // If MovieListFragment is null, I rotated the phone and I need to restore the values
-            if (((MovieActivity) getActivity()).getMovieListFragment() == null) {
-                ((MovieActivity) getActivity()).setMovieListFragment(this);
-            }
-        }
         ArrayList<Movie> mMovieList = mMovieListPresenter.getMovieList();
         initRecyclerView();
         showProgressBar();
@@ -93,7 +80,7 @@ public class MovieListFragment extends Fragment implements IMovieListContract.Vi
     private void initRecyclerView() {
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(), getResources().getInteger(R.integer.movie_list_columns));
         movieListRecyclerView.setLayoutManager(layoutManager);
-        adapter = new MovieListAdapter(getContext(), mMovieListPresenter.getMovieList(), this);
+        adapter = new MovieListAdapter(getContext(), mMovieListPresenter.getMovieList(), mIMovieListContract);
         movieListRecyclerView.setAdapter((RecyclerView.Adapter) adapter);
     }
 
@@ -115,13 +102,6 @@ public class MovieListFragment extends Fragment implements IMovieListContract.Vi
     @Override
     public void hideProgressBar() {
         movieProgressBar.setVisibility(View.GONE);
-    }
-
-    @Override
-    public void onClickListener(Movie movie) {
-        if(mIMovieListContract != null) {
-            mIMovieListContract.OnFragmentInteraction(Constants.MOVIE_DETAIL, movie);
-        }
     }
 
     @Override

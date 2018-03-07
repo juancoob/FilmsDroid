@@ -11,4 +11,6 @@ public class Constants {
     public static final String MOVIE_DETAIL = "movieDetail";
     public static final String MOVIE_BD_URL = "https://api.themoviedb.org/3/";
     public static final String MOVIE_DB_BASE_IMAGE_URL = "http://image.tmdb.org/t/p/";
+    public static final String POPULAR = "popular";
+    public static final String TOP = "top";
 }

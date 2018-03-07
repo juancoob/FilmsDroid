@@ -23,15 +23,6 @@ public class ActivityUtils {
         }
     }
 
-    public static void replaceFragmentToActivity(FragmentManager fragmentManager, Fragment fragment, int frameId) {
-        if(fragmentManager != null && fragment != null) {
-            FragmentTransaction transaction = fragmentManager.beginTransaction();
-            transaction.addToBackStack(null);
-            transaction.replace(frameId, fragment);
-            transaction.commit();
-        }
-    }
-
     public static Uri getImageUri(String imagePath, Context context) {
         return Uri.parse(Constants.MOVIE_DB_BASE_IMAGE_URL).buildUpon()
                 .appendEncodedPath(context.getResources().getString(R.string.default_image_size))

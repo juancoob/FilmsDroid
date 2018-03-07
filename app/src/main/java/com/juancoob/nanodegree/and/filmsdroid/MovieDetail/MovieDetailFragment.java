@@ -12,7 +12,6 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.juancoob.nanodegree.and.filmsdroid.R;
-import com.juancoob.nanodegree.and.filmsdroid.activity.MovieActivity;
 import com.juancoob.nanodegree.and.filmsdroid.model.Movie;
 import com.juancoob.nanodegree.and.filmsdroid.util.ActivityUtils;
 import com.squareup.picasso.Picasso;
@@ -67,11 +66,6 @@ public class MovieDetailFragment extends Fragment {
     public void onStart() {
         super.onStart();
         populateUi();
-        if(getActivity() != null) {
-            if(((MovieActivity) getActivity()).getMovieDetailFragment() == null) {
-                ((MovieActivity) getActivity()).setMovieDetailFragment(this);
-            }
-        }
     }
 
     private void populateUi() {

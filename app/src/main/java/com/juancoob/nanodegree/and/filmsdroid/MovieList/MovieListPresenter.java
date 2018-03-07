@@ -78,8 +78,13 @@ public class MovieListPresenter implements IMovieListContract.Presenter {
             responseCall.enqueue(new Callback<MovieResponse>() {
                 @Override
                 public void onResponse(@NonNull Call<MovieResponse> call, @NonNull Response<MovieResponse> response) {
-                    mMovieList = response.body().getMovieList();
-                    mMovieListFragment.showMovieList(mMovieList);
+                    if(response.body() != null) {
+                        mMovieList = response.body().getMovieList();
+                        mMovieListFragment.showMovieList(mMovieList);
+                    } else {
+                        mMovieListFragment.showToast(R.string.no_api_key);
+                        mMovieListFragment.hideProgressBar();
+                    }
                 }
 
                 @Override
